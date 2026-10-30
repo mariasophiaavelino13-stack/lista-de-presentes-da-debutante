@@ -1,0 +1,382 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lista de Presentes | XV da Mary</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Allura&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --gold: #c5a45a;
+  --light-gold: #ead49a;
+  --dark-gold: #80652f;
+  --black: #090807;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--light-gold);
+  background:
+    radial-gradient(ellipse at center, #211a12 0%, #0a0908 72%);
+  font-family: 'Cinzel', serif;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 25px 17px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.page.active {
+  display: flex;
+}
+
+.frame {
+  width: 100%;
+  max-width: 650px;
+  min-height: 88vh;
+  padding: 45px 22px;
+  position: relative;
+  border: 2px solid var(--gold);
+  outline: 1px solid var(--dark-gold);
+  outline-offset: 6px;
+  background:
+    linear-gradient(145deg, rgba(42,31,18,.55), rgba(0,0,0,.92));
+  box-shadow: 0 0 35px #000;
+}
+
+.frame::before,
+.frame::after {
+  content: "❧";
+  position: absolute;
+  color: var(--gold);
+  font-size: 42px;
+}
+
+.frame::before {
+  top: 5px;
+  left: 12px;
+}
+
+.frame::after {
+  bottom: 5px;
+  right: 12px;
+  transform: rotate(180deg);
+}
+
+.corner {
+  position: absolute;
+  color: var(--gold);
+  font-size: 28px;
+}
+
+.top-right {
+  top: 7px;
+  right: 13px;
+}
+
+.bottom-left {
+  bottom: 7px;
+  left: 13px;
+  transform: rotate(180deg);
+}
+
+.small-label {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 5px;
+  text-align: center;
+}
+
+h1, h2 {
+  font-weight: 500;
+  text-align: center;
+  color: var(--light-gold);
+}
+
+h1 {
+  font-size: clamp(27px, 7vw, 43px);
+  line-height: 1.4;
+  margin: 24px 0 10px;
+}
+
+.subtitle {
+  text-align: center;
+  font-family: 'Allura', cursive;
+  font-size: 32px;
+  color: var(--gold);
+}
+
+.description {
+  text-align: center;
+  font-size: 12px;
+  line-height: 2;
+  color: #d6c59c;
+  margin: 25px auto;
+  max-width: 400px;
+}
+
+.continue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 35px auto 0;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  background: #100d09;
+  color: var(--light-gold);
+  font-size: 30px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.continue:hover {
+  background: #382a16;
+  transform: scale(1.08);
+}
+
+.continue-label {
+  text-align: center;
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-top: 12px;
+}
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 35px;
+}
+
+.category {
+  width: 100%;
+  padding: 19px 12px;
+  color: var(--light-gold);
+  background: linear-gradient(110deg, #100e0a, #21190f, #100e0a);
+  border: 1px solid var(--gold);
+  border-radius: 12px;
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.category:hover {
+  background: #352716;
+  box-shadow: 0 0 15px #8d6c35;
+}
+
+.category-content {
+  display: none;
+  padding: 18px 13px;
+  margin-top: -8px;
+  border: 1px solid #80652f;
+  border-radius: 0 0 10px 10px;
+  background: rgba(0,0,0,.65);
+  color: #e2d3ae;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.category-content.open {
+  display: block;
+}
+
+.category-content ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.back {
+  display: block;
+  margin: 30px auto 0;
+  background: transparent;
+  border: 1px solid var(--dark-gold);
+  color: var(--light-gold);
+  border-radius: 20px;
+  padding: 11px 25px;
+  font-family: 'Cinzel', serif;
+  cursor: pointer;
+}
+
+.footer {
+  margin-top: 35px;
+  text-align: center;
+  font-family: 'Allura', cursive;
+  font-size: 27px;
+  color: var(--gold);
+}
+</style>
+</head>
+
+<body>
+
+<!-- PÁGINA 1: ABERTURA -->
+<section class="page active" id="home">
+  <main class="frame">
+    <span class="corner top-right">❧</span>
+    <span class="corner bottom-left">❧</span>
+
+    <p class="small-label">XV DA MARY</p>
+
+    <!-- A máscara original poderá ser colocada aqui.
+         Salve o arquivo como mascara-do-convite.png
+         na mesma pasta deste index.html. -->
+
+    <h1>Lista de Presentes</h1>
+    <div class="subtitle">da nossa debutante</div>
+
+    <p class="description">
+      Clique para ir para a página
+    </p>
+
+    <button class="continue" onclick="showPage('gifts')"
+      aria-label="Ir para a lista de presentes">
+      →
+    </button>
+
+    <p class="continue-label">CLIQUE PARA CONTINUAR</p>
+
+    <div class="footer">Uma noite inesquecível</div>
+  </main>
+</section>
+
+<!-- PÁGINA 2: CATEGORIAS -->
+<section class="page" id="gifts">
+  <main class="frame">
+    <span class="corner top-right">❧</span>
+    <span class="corner bottom-left">❧</span>
+
+    <p class="small-label">XV DA MARY</p>
+    <h2>Escolha uma categoria</h2>
+    <p class="description">
+      Será uma alegria receber um presente escolhido com carinho.
+    </p>
+
+    <div class="categories">
+
+      <div>
+        <button class="category" onclick="toggleCategory('clothes')">
+          ROUPAS
+        </button>
+        <div class="category-content" id="clothes">
+          <ul>
+            <li>Blusas</li>
+            <li>Calças</li>
+            <li>Shorts</li>
+            <li>Vestidos</li>
+            <li>Saias</li>
+          </ul>
+          <p>Tamanho e estilos serão informados em breve.</p>
+        </div>
+      </div>
+
+      <div>
+        <button class="category" onclick="toggleCategory('shoes')">
+          CALÇADOS
+        </button>
+        <div class="category-content" id="shoes">
+          <ul>
+            <li>Tênis</li>
+            <li>Sandálias</li>
+            <li>Chinelos</li>
+            <li>Sapatos</li>
+          </ul>
+          <p>Numeração será informada em breve.</p>
+        </div>
+      </div>
+
+      <div>
+        <button class="category" onclick="toggleCategory('technology')">
+          TECNOLOGIA
+        </button>
+        <div class="category-content" id="technology">
+          <ul>
+            <li>Fones de ouvido</li>
+            <li>Acessórios para celular</li>
+            <li>Caixa de som</li>
+            <li>Outros eletrônicos</li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <button class="category" onclick="toggleCategory('beauty')">
+          BELEZA E ACESSÓRIOS
+        </button>
+        <div class="category-content" id="beauty">
+          <ul>
+            <li>Perfumes</li>
+            <li>Joias e bijuterias</li>
+            <li>Relógios</li>
+            <li>Bolsas</li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <button class="category" onclick="toggleCategory('special')">
+          PRESENTES ESPECIAIS
+        </button>
+        <div class="category-content" id="special">
+          <ul>
+            <li>Presentes personalizados</li>
+            <li>Experiências especiais</li>
+            <li>Lembranças criativas</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="back" onclick="showPage('home')">
+      Voltar à abertura
+    </button>
+
+    <div class="footer">Com carinho, Mary</div>
+  </main>
+</section>
+
+<script>
+function showPage(pageId) {
+  document.querySelectorAll('.page').forEach(page => {
+    page.classList.remove('active');
+  });
+
+  document.getElementById(pageId).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function toggleCategory(id) {
+  const selected = document.getElementById(id);
+  const wasOpen = selected.classList.contains('open');
+
+  document.querySelectorAll('.category-content').forEach(item => {
+    item.classList.remove('open');
+  });
+
+  if (!wasOpen) {
+    selected.classList.add('open');
+  }
+}
+</script>
+
+</body>
+      </html>
+      
