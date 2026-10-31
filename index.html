@@ -1,532 +1,448 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>XV da Mary | The Royal Masquerade</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Presentes | XV da Mari</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
 
-<style>
-:root {
-  --vinho: #681d30;
-  --vinho-escuro: #290d17;
-  --dourado: #b18a50;
-  --marfim: #f4ead7;
-  --texto: #35251f;
-}
+  <style>
+    :root {
+      --vinho: #310b19;
+      --vinho-claro: #54172b;
+      --dourado: #c6a45b;
+      --dourado-claro: #ead69e;
+      --papel: #f4ead5;
+      --texto: #3a2630;
+    }
 
-* {
-  box-sizing: border-box;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  background:
-    radial-gradient(ellipse at top, #57303a, #1b0b12 75%);
-  color: var(--marfim);
-  font-family: 'Cormorant Garamond', serif;
-}
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--papel);
+      font-family: "Cormorant Garamond", serif;
+      background:
+        radial-gradient(ellipse at top, #68263b 0%, transparent 55%),
+        linear-gradient(145deg, #19050d, var(--vinho) 55%, #17050c);
+      padding: 28px 16px 50px;
+    }
 
-/* ENVELOPE */
+    .pagina {
+      width: min(760px, 100%);
+      margin: auto;
+      text-align: center;
+    }
 
-#entrada {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 25px;
-  transition: opacity 1s ease;
-}
+    .ornamento {
+      color: var(--dourado);
+      font-size: 28px;
+      letter-spacing: 12px;
+      margin: 12px 0;
+    }
 
-.envelope {
-  width: min(390px, 88vw);
-  height: 255px;
-  position: relative;
-  cursor: pointer;
-  perspective: 900px;
-  filter: drop-shadow(0 20px 30px #0009);
-}
+    .mascara {
+      font-size: 58px;
+      margin: 14px 0 4px;
+      filter: drop-shadow(0 0 12px rgba(198, 164, 91, .35));
+    }
 
-.envelope-base {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 20% 20%, #fff7df55, transparent 40%),
-    linear-gradient(135deg, #e9d7b6, #c8ad82);
-  border: 2px solid #a98753;
-  border-radius: 4px;
-  overflow: hidden;
-}
+    .subtitulo {
+      color: var(--dourado-claro);
+      font-family: "Cinzel", serif;
+      font-size: 12px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
 
-.envelope-base::before {
-  content: "";
-  position: absolute;
-  inset: 12px;
-  border: 1px solid #a27b42;
-}
+    h1 {
+      font-family: "Great Vibes", cursive;
+      color: var(--dourado-claro);
+      font-size: clamp(48px, 10vw, 76px);
+      font-weight: 400;
+      margin: 8px 0 0;
+    }
 
-.envelope-base::after {
-  content: "✦";
-  position: absolute;
-  top: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #96703b;
-  font-size: 24px;
-}
+    h2 {
+      font-family: "Cinzel", serif;
+      color: var(--dourado);
+      font-size: clamp(21px, 5vw, 29px);
+      font-weight: 500;
+      letter-spacing: 3px;
+      margin: 4px 0 20px;
+    }
 
-.envelope-text {
-  position: absolute;
-  top: 75px;
-  width: 100%;
-  text-align: center;
-  color: #553b2b;
-  font-family: 'Great Vibes', cursive;
-  font-size: 38px;
-  z-index: 2;
-}
+    .introducao {
+      max-width: 570px;
+      margin: 0 auto 28px;
+      color: #f1e4d1;
+      font-size: 21px;
+      line-height: 1.45;
+    }
 
-.envelope-sub {
-  position: absolute;
-  top: 125px;
-  width: 100%;
-  text-align: center;
-  color: #745332;
-  font-family: 'Playfair Display', serif;
-  font-size: 10px;
-  letter-spacing: 4px;
-  z-index: 2;
-}
+    .cartao {
+      background:
+        linear-gradient(rgba(255, 250, 237, .96), rgba(244, 234, 213, .98));
+      color: var(--texto);
+      border: 2px solid var(--dourado);
+      outline: 1px solid rgba(198, 164, 91, .45);
+      outline-offset: 6px;
+      border-radius: 5px;
+      padding: 28px 22px;
+      margin: 30px auto;
+      box-shadow: 0 15px 45px rgba(0, 0, 0, .35);
+      text-align: center;
+    }
 
-.aba {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(145deg, #f0dfc0, #b99767);
-  clip-path: polygon(0 0, 100% 0, 50% 65%);
-  transform-origin: top;
-  transition: transform 1s ease;
-  z-index: 4;
-  border-top: 2px solid #a17a43;
-}
+    .cartao h3 {
+      font-family: "Cinzel", serif;
+      color: #6a273b;
+      font-size: 19px;
+      letter-spacing: 2px;
+      margin: 0 0 12px;
+    }
 
-.lacre {
-  position: absolute;
-  left: 50%;
-  top: 48%;
-  transform: translate(-50%, -50%);
-  width: 66px;
-  height: 66px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  background:
-    radial-gradient(circle at 35% 30%, #a94b58, #65192b 65%, #3c0d1b);
-  border: 3px double #c6a36c;
-  color: #e8cb91;
-  font-size: 27px;
-  z-index: 5;
-  box-shadow: 0 4px 10px #0006;
-  transition: opacity .5s;
-}
+    .cartao p {
+      font-size: 19px;
+      line-height: 1.45;
+      margin: 0;
+    }
 
-.envelope.aberto .aba {
-  transform: rotateX(180deg);
-}
+    .lista-titulo {
+      font-family: "Cinzel", serif;
+      color: var(--dourado-claro);
+      letter-spacing: 3px;
+      font-size: 20px;
+      margin: 40px 0 18px;
+    }
 
-.envelope.aberto .lacre {
-  opacity: 0;
-}
+    .categoria {
+      margin: 13px 0;
+      text-align: left;
+      border: 1px solid var(--dourado);
+      border-radius: 4px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, .035);
+    }
 
-.instrucao {
-  position: absolute;
-  bottom: -48px;
-  width: 100%;
-  text-align: center;
-  color: #e5c995;
-  letter-spacing: 2px;
-  font-size: 13px;
-}
+    .categoria-botao {
+      width: 100%;
+      border: 0;
+      background: linear-gradient(110deg, #4b1428, #2a0915);
+      color: var(--dourado-claro);
+      padding: 18px 17px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      cursor: pointer;
+      font-family: "Cinzel", serif;
+      font-size: 15px;
+      letter-spacing: 1.5px;
+      text-align: left;
+    }
 
-/* CONVITE */
+    .categoria-botao:hover {
+      background: #5a1b31;
+    }
 
-#convite {
-  display: none;
-  padding: 35px 15px 60px;
-  animation: aparecer 1.4s ease forwards;
-}
+    .seta {
+      color: var(--dourado);
+      font-size: 20px;
+      transition: transform .2s ease;
+    }
 
-@keyframes aparecer {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+    .categoria.aberta .seta {
+      transform: rotate(180deg);
+    }
 
-.cartao {
-  position: relative;
-  width: min(680px, 100%);
-  margin: auto;
-  padding: 15px;
-  background: linear-gradient(145deg, #f8eedb, #e9d7b9);
-  color: var(--texto);
-  box-shadow: 0 20px 70px #0009;
-}
+    .itens {
+      display: none;
+      padding: 8px 16px 16px;
+      background: rgba(244, 234, 213, .97);
+      color: var(--texto);
+    }
 
-.moldura {
-  position: relative;
-  border: 2px solid var(--dourado);
-  outline: 1px solid #c8a56c;
-  outline-offset: 5px;
-  padding: 50px 35px;
-  text-align: center;
-  overflow: hidden;
-  background:
-    radial-gradient(ellipse at center, #fff9ed 0%, #f0e2c9 100%);
-}
+    .categoria.aberta .itens {
+      display: block;
+    }
 
-.moldura::before,
-.moldura::after {
-  content: "❧";
-  position: absolute;
-  color: var(--dourado);
-  font-size: 48px;
-  opacity: .75;
-}
+    .item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 13px 2px;
+      border-bottom: 1px solid rgba(106, 39, 59, .2);
+      font-size: 19px;
+    }
 
-.moldura::before {
-  top: 8px;
-  left: 12px;
-}
+    .item:last-child {
+      border-bottom: 0;
+    }
 
-.moldura::after {
-  bottom: 8px;
-  right: 12px;
-  transform: rotate(180deg);
-}
+    .item-nome {
+      flex: 1;
+    }
 
-.linha {
-  width: 75%;
-  height: 1px;
-  margin: 22px auto;
-  background: linear-gradient(to right, transparent, var(--dourado), transparent);
-}
+    .item button {
+      border: 1px solid #8c6b32;
+      background: #5a1b31;
+      color: #fff1d4;
+      border-radius: 3px;
+      padding: 8px 10px;
+      font-family: "Cinzel", serif;
+      font-size: 10px;
+      letter-spacing: .5px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
 
-.topo {
-  font-family: 'Playfair Display', serif;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  color: var(--vinho);
-  font-size: 12px;
-}
+    .item button:hover {
+      background: #7a2a45;
+    }
 
-.chamada {
-  font-family: 'Great Vibes', cursive;
-  font-size: clamp(42px, 9vw, 68px);
-  color: var(--vinho);
-  margin: 18px 0 0;
-  font-weight: 400;
-}
+    .observacao {
+      color: #f0dfc3;
+      font-size: 17px;
+      margin: 22px auto;
+      line-height: 1.4;
+    }
 
-.subtitulo {
-  font-family: 'Playfair Display', serif;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  color: #89683f;
-  font-size: 12px;
-  margin-top: 8px;
-}
+    .whatsapp {
+      display: inline-block;
+      margin: 12px auto;
+      padding: 13px 22px;
+      border: 1px solid var(--dourado-claro);
+      border-radius: 3px;
+      color: var(--dourado-claro);
+      text-decoration: none;
+      font-family: "Cinzel", serif;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      background: rgba(84, 23, 43, .7);
+    }
 
-.ornamento {
-  color: var(--dourado);
-  font-size: 25px;
-  margin: 20px 0;
-}
+    .whatsapp:hover {
+      background: #64223a;
+    }
 
-/* MÁSCARAS NOS CANTOS */
+    footer {
+      color: var(--dourado-claro);
+      font-family: "Great Vibes", cursive;
+      font-size: 34px;
+      margin-top: 36px;
+    }
 
-.mascaras {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 25px 0;
-  padding: 0 4px;
-}
+    @media (max-width: 480px) {
+      .cartao {
+        padding: 24px 17px;
+      }
 
-.mascara {
-  width: 115px;
-  height: 70px;
-  position: relative;
-  transform: rotate(-8deg);
-}
+      .item {
+        align-items: flex-start;
+        flex-direction: column;
+      }
 
-.mascara.direita {
-  transform: rotate(8deg) scaleX(-1);
-}
+      .item button {
+        width: 100%;
+        padding: 10px;
+      }
 
-.mascara svg {
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-}
-
-.texto-convite {
-  max-width: 470px;
-  margin: auto;
-  font-size: 21px;
-  line-height: 1.55;
-  color: #49362c;
-}
-
-.texto-convite strong {
-  color: var(--vinho);
-  font-weight: 700;
-}
-
-.destaque {
-  font-family: 'Playfair Display', serif;
-  font-size: 14px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--vinho);
-  margin: 28px 0 10px;
-}
-
-.nome {
-  font-family: 'Great Vibes', cursive;
-  color: var(--vinho);
-  font-size: clamp(48px, 10vw, 75px);
-  margin: 8px 0;
-}
-
-.detalhes {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  max-width: 470px;
-  margin: 30px auto;
-}
-
-.detalhe {
-  border: 1px solid #c4a16b;
-  padding: 15px 8px;
-  background: #f7edda99;
-}
-
-.detalhe span {
-  display: block;
-  color: #987443;
-  font-family: 'Playfair Display', serif;
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 7px;
-}
-
-.detalhe strong {
-  font-size: 19px;
-  font-weight: 600;
-  color: var(--vinho);
-}
-
-.frase-final {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  color: #745139;
-  font-size: 17px;
-  line-height: 1.6;
-  margin: 25px auto;
-  max-width: 440px;
-}
-
-.assinatura {
-  font-family: 'Great Vibes', cursive;
-  font-size: 38px;
-  color: var(--vinho);
-  margin-top: 20px;
-}
-
-.confirmar {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 14px 28px;
-  border: 1px solid #d0b077;
-  background: linear-gradient(135deg, #77283b, #3c101e);
-  color: #f8e9ce;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-family: 'Playfair Display', serif;
-  font-size: 11px;
-  transition: .3s;
-}
-
-.confirmar:hover {
-  background: #9a4254;
-  transform: translateY(-2px);
-}
-
-.rodape {
-  margin-top: 28px;
-  font-size: 11px;
-  letter-spacing: 3px;
-  color: #967348;
-  text-transform: uppercase;
-}
-
-@media (max-width: 480px) {
-  .moldura {
-    padding: 40px 18px;
-  }
-
-  .texto-convite {
-    font-size: 19px;
-  }
-
-  .mascara {
-    width: 95px;
-  }
-
-  .detalhes {
-    gap: 9px;
-  }
-}
-</style>
+      .categoria-botao {
+        font-size: 13px;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <main class="pagina">
 
-<section id="entrada">
-  <div class="envelope" id="envelope" onclick="abrirConvite()">
-    <div class="envelope-base">
-      <div class="envelope-text">XV da Mary</div>
-      <div class="envelope-sub">UM CONVITE ESPECIAL</div>
-    </div>
-    <div class="aba"></div>
-    <div class="lacre">✦</div>
-    <div class="instrucao">TOQUE PARA ABRIR</div>
-  </div>
-</section>
+    <div class="ornamento">✦ ✧ ✦</div>
+    <div class="mascara">🎭</div>
 
-<main id="convite">
-  <div class="cartao">
-    <div class="moldura">
+    <div class="subtitulo">Uma noite de mistério e elegância</div>
+    <h1>XV da Mari</h1>
+    <h2>Lista de Presentes</h2>
 
-      <div class="topo">Um convite à altura de uma noite inesquecível</div>
+    <p class="introducao">
+      Sua presença será o meu maior presente.
+      Mas, se desejar me presentear, preparei algumas sugestões
+      com muito carinho.
+    </p>
 
-      <div class="ornamento">✦ ❧ ✦</div>
+    <section class="cartao">
+      <h3>Uma lembrança especial</h3>
+      <p>
+        Cada presente será recebido com muito carinho e fará
+        parte das recordações dessa noite tão importante.
+        Obrigada por fazer parte desse momento!
+      </p>
+    </section>
 
-      <h1 class="chamada">The Royal Masquerade</h1>
-      <div class="subtitulo">Baile de máscaras · Mystic Falls</div>
+    <div class="lista-titulo">ESCOLHA UMA CATEGORIA</div>
 
-      <div class="linha"></div>
-
-      <div class="mascaras">
-
-        <div class="mascara">
-          <svg viewBox="0 0 160 90" xmlns="http://www.w3.org/2000/svg">
-            <path d="M8 40 Q30 5 65 29 Q80 42 80 38 Q80 42 95 29 Q130 5 152 40 Q135 62 110 65 Q90 65 80 53 Q70 65 50 65 Q25 62 8 40Z"
-              fill="#641b2c" stroke="#b18a50" stroke-width="3"/>
-            <path d="M15 40 Q40 22 65 38 Q48 49 30 48Z" fill="#f4ead7"/>
-            <path d="M145 40 Q120 22 95 38 Q112 49 130 48Z" fill="#f4ead7"/>
-            <path d="M8 40 Q30 5 65 29 Q80 42 80 38 Q80 42 95 29 Q130 5 152 40"
-              fill="none" stroke="#d6b77e" stroke-width="2"/>
-            <circle cx="80" cy="39" r="5" fill="#d6b77e"/>
-            <path d="M25 25 Q42 8 55 18 M135 25 Q118 8 105 18"
-              fill="none" stroke="#d6b77e" stroke-width="2"/>
-          </svg>
+    <section class="categoria">
+      <button class="categoria-botao" aria-expanded="false">
+        <span>✧ Roupas</span><span class="seta">⌄</span>
+      </button>
+      <div class="itens">
+        <div class="item">
+          <span class="item-nome">Blusas</span>
+          <button onclick="escolher('Blusas')">Consultar presente</button>
         </div>
-
-        <div class="mascara direita">
-          <svg viewBox="0 0 160 90" xmlns="http://www.w3.org/2000/svg">
-            <path d="M8 40 Q30 5 65 29 Q80 42 80 38 Q80 42 95 29 Q130 5 152 40 Q135 62 110 65 Q90 65 80 53 Q70 65 50 65 Q25 62 8 40Z"
-              fill="#641b2c" stroke="#b18a50" stroke-width="3"/>
-            <path d="M15 40 Q40 22 65 38 Q48 49 30 48Z" fill="#f4ead7"/>
-            <path d="M145 40 Q120 22 95 38 Q112 49 130 48Z" fill="#f4ead7"/>
-            <path d="M8 40 Q30 5 65 29 Q80 42 80 38 Q80 42 95 29 Q130 5 152 40"
-              fill="none" stroke="#d6b77e" stroke-width="2"/>
-            <circle cx="80" cy="39" r="5" fill="#d6b77e"/>
-            <path d="M25 25 Q42 8 55 18 M135 25 Q118 8 105 18"
-              fill="none" stroke="#d6b77e" stroke-width="2"/>
-          </svg>
+        <div class="item">
+          <span class="item-nome">Vestidos</span>
+          <button onclick="escolher('Vestidos')">Consultar presente</button>
         </div>
-
-      </div>
-
-      <div class="linha"></div>
-
-      <div class="destaque">Você está cordialmente convidado(a) para celebrar</div>
-
-      <div class="nome">XV da Mary</div>
-
-      <div class="ornamento">❧ ✦ ❧</div>
-
-      <div class="texto-convite">
-        Por trás de cada máscara existe um segredo.
-        E por trás desta noite existe um sonho:
-        celebrar meus quinze anos ao lado de pessoas especiais.
-        <br><br>
-        Prepare-se para uma noite de <strong>mistério, elegância e encanto</strong>,
-        onde cada detalhe guarda uma surpresa e cada momento merece ser lembrado.
-      </div>
-
-      <div class="linha"></div>
-
-      <div class="destaque">Detalhes da celebração</div>
-
-      <div class="detalhes">
-        <div class="detalhe">
-          <span>Data</span>
-          <strong>A DEFINIR</strong>
+        <div class="item">
+          <span class="item-nome">Conjuntos</span>
+          <button onclick="escolher('Conjuntos')">Consultar presente</button>
         </div>
-        <div class="detalhe">
-          <span>Horário</span>
-          <strong>A DEFINIR</strong>
-        </div>
-        <div class="detalhe" style="grid-column: 1 / -1;">
-          <span>Local</span>
-          <strong>A DEFINIR</strong>
+        <div class="item">
+          <span class="item-nome">Pijamas</span>
+          <button onclick="escolher('Pijamas')">Consultar presente</button>
         </div>
       </div>
+    </section>
 
-      <div class="frase-final">
-        "As máscaras estão prontas. E você, está preparado(a) para uma noite inesquecível?"
+    <section class="categoria">
+      <button class="categoria-botao" aria-expanded="false">
+        <span>✧ Calçados</span><span class="seta">⌄</span>
+      </button>
+      <div class="itens">
+        <div class="item">
+          <span class="item-nome">Tênis</span>
+          <button onclick="escolher('Tênis')">Consultar presente</button>
+        </div>
+        <div class="item">
+          <span class="item-nome">Sandálias</span>
+          <button onclick="escolher('Sandálias')">Consultar presente</button>
+        </div>
+        <div class="item">
+          <span class="item-nome">Rasteirinhas</span>
+          <button onclick="escolher('Rasteirinhas')">Consultar presente</button>
+        </div>
       </div>
+    </section>
 
-      <div class="assinatura">Com carinho, Mary</div>
-
-      <a class="confirmar"
-         href="https://wa.me/5521983667385?text=Ol%C3%A1!%20Estou%20passando%20para%20confirmar%20minha%20presen%C3%A7a%20nos%2015%20anos%20da%20Mary."
-         target="_blank">
-        Confirmar presença
-      </a>
-
-      <div class="rodape">
-        Uma noite de mistério e elegância
+    <section class="categoria">
+      <button class="categoria-botao" aria-expanded="false">
+        <span>✧ Tecnologia</span><span class="seta">⌄</span>
+      </button>
+      <div class="itens">
+        <div class="item">
+          <span class="item-nome">Fone Bluetooth</span>
+          <button onclick="escolher('Fone Bluetooth')">Consultar presente</button>
+        </div>
+        <div class="item">
+          <span class="item-nome">Caixa de som portátil</span>
+          <button onclick="escolher('Caixa de som portátil')">Consultar presente</button>
+        </div>
+        <div class="item">
+          <span class="item-nome">Acessórios para celular</span>
+          <button onclick="escolher('Acessórios para celular')">Consultar presente</button>
+        </div>
+        <div class="item">
+          <span class="item-nome">Smartwatch</span>
+          <button onclick="escolher('Smartwatch')">Consultar presente</button>
+        </div>
       </div>
+    </section>
 
-    </div>
-  </div>
-</main>
+    <section class="categoria">
+      <button class="categoria-botao" aria-expanded="false">
+        <span>✧ Beleza e acessórios</span><span class="seta">⌄</span>
+      </button>
+      <div class="itens">
+        <div class="item">
+          <span class="item-nome">Perfume</span>
+          <button onclick="escolher('Perfume')">Consultar presente</button>
+        </div>
+        <div class="item">
+          <span class="item-nome">Maquiagem</span>
+          <button onclick="escolher('Maquiagem')">Consultar presente</button>
+        </div>
+        <div class="item">
+          <span class="item-nome">Bolsa</span>
+          <button onclick="escolher('Bolsa')">Consultar presente</button>
+        </div>
+        <div class="item">
+          <span class="item-nome">Acessórios</span>
+          <button onclick="escolher('Acessórios')">Consultar presente</button>
+        </div>
+      </div>
+    </section>
 
-<script>
-function abrirConvite() {
-  const envelope = document.getElementById('envelope');
-  const entrada = document.getElementById('entrada');
-  const convite = document.getElementById('convite');
+    <section class="categoria">
+      <button class="categoria-botao" aria-expanded="false">
+        <span>✧ Presentes especiais</span><span class="seta">⌄</span>
+      </button>
+      <div class="itens">
+        <div class="item">
+          <span class="item-nome">Livros</span>
+          <button onclick="escolher('Livros')">Consultar presente</button>
+        </div>
+        <div class="item">
+          <span class="item-nome">Itens de decoração</span>
+          <button onclick="escolher('Itens de decoração')">Consultar presente</button>
+        </div>
+        <div class="item">
+          <span class="item-nome">Vale-presente</span>
+          <button onclick="escolher('Vale-presente')">Consultar presente</button>
+        </div>
+        <div class="item">
+          <span class="item-nome">Uma surpresa especial</span>
+          <button onclick="escolher('Uma surpresa especial')">Consultar presente</button>
+        </div>
+      </div>
+    </section>
 
-  envelope.classList.add('aberto');
+    <p class="observacao">
+      Para combinar um presente ou consultar tamanhos e detalhes,
+      é só entrar em contato pelo WhatsApp.
+    </p>
 
-  setTimeout(() => {
-    entrada.style.opacity = '0';
-  }, 650);
+    <a class="whatsapp"
+       href="https://wa.me/5521983667385?text=Ol%C3%A1%21%20Gostaria%20de%20conversar%20sobre%20um%20presente%20para%20os%20XV%20da%20Mari."
+       target="_blank" rel="noopener">
+      FALAR COM A DEBUTANTE
+    </a>
 
-  setTimeout(() => {
-    entrada.style.display = 'none';
-    convite.style.display = 'block';
-    window.scrollTo(0, 0);
-  }, 1500);
-}
-</script>
+    <div class="ornamento">✦ ✧ ✦</div>
+    <footer>Um beijo da sua debutante</footer>
 
+  </main>
+
+  <script>
+    document.querySelectorAll(".categoria-botao").forEach((botao) => {
+      botao.addEventListener("click", () => {
+        const categoria = botao.closest(".categoria");
+        const aberta = categoria.classList.toggle("aberta");
+        botao.setAttribute("aria-expanded", aberta ? "true" : "false");
+      });
+    });
+
+    function escolher(presente) {
+      const mensagem =
+        "Olá! Gostaria de conversar sobre presentear a Mari com: " +
+        presente +
+        ". Podemos combinar os detalhes?";
+
+      const link =
+        "https://wa.me/5521983667385?text=" +
+        encodeURIComponent(mensagem);
+
+      window.open(link, "_blank", "noopener");
+    }
+  </script>
 </body>
 </html>
