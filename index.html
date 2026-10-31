@@ -3,23 +3,14 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lista de Presentes | XV da Mari</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Presentes da Mari</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --vinho: #310b19;
-      --vinho-claro: #54172b;
-      --dourado: #c6a45b;
-      --dourado-claro: #ead69e;
-      --papel: #f4ead5;
-      --texto: #3a2630;
-    }
-
     * {
       box-sizing: border-box;
     }
@@ -27,394 +18,386 @@
     body {
       margin: 0;
       min-height: 100vh;
-      color: var(--papel);
-      font-family: "Cormorant Garamond", serif;
+      padding: 30px 16px 50px;
+      color: #f5e9d2;
       background:
-        radial-gradient(ellipse at top, #68263b 0%, transparent 55%),
-        linear-gradient(145deg, #19050d, var(--vinho) 55%, #17050c);
-      padding: 28px 16px 50px;
+        radial-gradient(ellipse at top, #67243b 0%, transparent 55%),
+        linear-gradient(140deg, #17050d, #3a0d20 55%, #17050d);
+      font-family: "Cormorant Garamond", serif;
     }
 
-    .pagina {
-      width: min(760px, 100%);
+    .container {
+      max-width: 760px;
       margin: auto;
       text-align: center;
     }
 
     .ornamento {
-      color: var(--dourado);
-      font-size: 28px;
-      letter-spacing: 12px;
-      margin: 12px 0;
+      color: #d5b66f;
+      letter-spacing: 10px;
+      font-size: 23px;
+      margin: 15px 0;
     }
 
     .mascara {
-      font-size: 58px;
-      margin: 14px 0 4px;
-      filter: drop-shadow(0 0 12px rgba(198, 164, 91, .35));
+      font-size: 48px;
+      margin: 12px 0;
     }
 
-    .subtitulo {
-      color: var(--dourado-claro);
+    .frase {
       font-family: "Cinzel", serif;
-      font-size: 12px;
+      color: #e7d29d;
+      font-size: 11px;
       letter-spacing: 4px;
       text-transform: uppercase;
     }
 
     h1 {
       font-family: "Great Vibes", cursive;
-      color: var(--dourado-claro);
-      font-size: clamp(48px, 10vw, 76px);
+      color: #e7ce91;
+      font-size: clamp(55px, 11vw, 78px);
       font-weight: 400;
-      margin: 8px 0 0;
+      margin: 12px 0 0;
     }
 
     h2 {
       font-family: "Cinzel", serif;
-      color: var(--dourado);
-      font-size: clamp(21px, 5vw, 29px);
-      font-weight: 500;
-      letter-spacing: 3px;
-      margin: 4px 0 20px;
-    }
-
-    .introducao {
-      max-width: 570px;
-      margin: 0 auto 28px;
-      color: #f1e4d1;
+      color: #d5b66f;
       font-size: 21px;
-      line-height: 1.45;
+      letter-spacing: 3px;
+      font-weight: 400;
+      margin: 5px 0 25px;
     }
 
-    .cartao {
-      background:
-        linear-gradient(rgba(255, 250, 237, .96), rgba(244, 234, 213, .98));
-      color: var(--texto);
-      border: 2px solid var(--dourado);
-      outline: 1px solid rgba(198, 164, 91, .45);
-      outline-offset: 6px;
-      border-radius: 5px;
-      padding: 28px 22px;
-      margin: 30px auto;
-      box-shadow: 0 15px 45px rgba(0, 0, 0, .35);
-      text-align: center;
+    .mensagem {
+      max-width: 560px;
+      margin: 0 auto 30px;
+      font-size: 21px;
+      line-height: 1.5;
     }
 
-    .cartao h3 {
+    .papel {
+      background: #f3e8d2;
+      color: #432331;
+      border: 2px solid #c6a45b;
+      outline: 1px solid #c6a45b;
+      outline-offset: 5px;
+      padding: 27px 22px;
+      margin: 25px 6px 35px;
+      border-radius: 3px;
+      box-shadow: 0 12px 35px #0007;
+    }
+
+    .papel h3 {
       font-family: "Cinzel", serif;
-      color: #6a273b;
-      font-size: 19px;
+      color: #6a263d;
+      font-weight: 500;
       letter-spacing: 2px;
+      font-size: 17px;
       margin: 0 0 12px;
     }
 
-    .cartao p {
-      font-size: 19px;
-      line-height: 1.45;
+    .papel p {
+      font-size: 20px;
+      line-height: 1.4;
       margin: 0;
     }
 
-    .lista-titulo {
+    .titulo-lista {
+      color: #e7ce91;
       font-family: "Cinzel", serif;
-      color: var(--dourado-claro);
       letter-spacing: 3px;
-      font-size: 20px;
+      font-size: 17px;
       margin: 40px 0 18px;
     }
 
     .categoria {
       margin: 13px 0;
-      text-align: left;
-      border: 1px solid var(--dourado);
+      border: 1px solid #c6a45b;
       border-radius: 4px;
       overflow: hidden;
-      background: rgba(255, 255, 255, .035);
+      text-align: left;
+      background: #ffffff08;
     }
 
-    .categoria-botao {
+    .categoria button.abrir {
       width: 100%;
+      padding: 19px 17px;
       border: 0;
-      background: linear-gradient(110deg, #4b1428, #2a0915);
-      color: var(--dourado-claro);
-      padding: 18px 17px;
+      background: linear-gradient(100deg, #57182e, #2c0917);
+      color: #f0dca9;
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
-      cursor: pointer;
       font-family: "Cinzel", serif;
-      font-size: 15px;
+      font-size: 14px;
       letter-spacing: 1.5px;
       text-align: left;
     }
 
-    .categoria-botao:hover {
-      background: #5a1b31;
+    .categoria button.abrir:hover {
+      background: #69243d;
     }
 
     .seta {
-      color: var(--dourado);
+      color: #d5b66f;
       font-size: 20px;
-      transition: transform .2s ease;
+      transition: transform .2s;
     }
 
     .categoria.aberta .seta {
       transform: rotate(180deg);
     }
 
-    .itens {
+    .conteudo {
       display: none;
-      padding: 8px 16px 16px;
-      background: rgba(244, 234, 213, .97);
-      color: var(--texto);
+      background: #f3e8d2;
+      color: #432331;
+      padding: 8px 17px;
     }
 
-    .categoria.aberta .itens {
+    .categoria.aberta .conteudo {
       display: block;
     }
 
-    .item {
+    .presente {
+      padding: 13px 0;
+      border-bottom: 1px solid #d8c8aa;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 12px;
-      padding: 13px 2px;
-      border-bottom: 1px solid rgba(106, 39, 59, .2);
-      font-size: 19px;
+      font-size: 20px;
     }
 
-    .item:last-child {
+    .presente:last-child {
       border-bottom: 0;
     }
 
-    .item-nome {
+    .presente span {
       flex: 1;
     }
 
-    .item button {
-      border: 1px solid #8c6b32;
-      background: #5a1b31;
-      color: #fff1d4;
+    .presente a {
+      display: inline-block;
+      text-decoration: none;
+      color: #fff0d0;
+      background: #54172b;
+      border: 1px solid #a88749;
       border-radius: 3px;
-      padding: 8px 10px;
+      padding: 9px 11px;
       font-family: "Cinzel", serif;
       font-size: 10px;
       letter-spacing: .5px;
-      cursor: pointer;
       white-space: nowrap;
     }
 
-    .item button:hover {
-      background: #7a2a45;
+    .presente a:hover {
+      background: #762c46;
     }
 
-    .observacao {
-      color: #f0dfc3;
-      font-size: 17px;
-      margin: 22px auto;
-      line-height: 1.4;
+    .aviso {
+      max-width: 540px;
+      margin: 28px auto 15px;
+      font-size: 19px;
+      line-height: 1.45;
     }
 
-    .whatsapp {
+    .contato {
       display: inline-block;
       margin: 12px auto;
-      padding: 13px 22px;
-      border: 1px solid var(--dourado-claro);
-      border-radius: 3px;
-      color: var(--dourado-claro);
+      padding: 13px 20px;
+      color: #f0dca9;
+      background: #54172b;
+      border: 1px solid #d5b66f;
       text-decoration: none;
       font-family: "Cinzel", serif;
-      font-size: 12px;
+      font-size: 11px;
       letter-spacing: 1.5px;
-      background: rgba(84, 23, 43, .7);
     }
 
-    .whatsapp:hover {
-      background: #64223a;
+    .contato:hover {
+      background: #762c46;
     }
 
     footer {
-      color: var(--dourado-claro);
       font-family: "Great Vibes", cursive;
       font-size: 34px;
-      margin-top: 36px;
+      color: #e7ce91;
+      margin-top: 30px;
     }
 
     @media (max-width: 480px) {
-      .cartao {
-        padding: 24px 17px;
-      }
-
-      .item {
-        align-items: flex-start;
+      .presente {
         flex-direction: column;
+        align-items: stretch;
       }
 
-      .item button {
-        width: 100%;
-        padding: 10px;
+      .presente a {
+        text-align: center;
       }
 
-      .categoria-botao {
-        font-size: 13px;
+      .papel {
+        padding: 24px 16px;
       }
     }
   </style>
 </head>
 
 <body>
-  <main class="pagina">
+  <main class="container">
 
     <div class="ornamento">✦ ✧ ✦</div>
     <div class="mascara">🎭</div>
 
-    <div class="subtitulo">Uma noite de mistério e elegância</div>
-    <h1>XV da Mari</h1>
-    <h2>Lista de Presentes</h2>
+    <div class="frase">Uma noite de mistério e elegância</div>
 
-    <p class="introducao">
-      Sua presença será o meu maior presente.
-      Mas, se desejar me presentear, preparei algumas sugestões
-      com muito carinho.
+    <h1>XV da Mari</h1>
+    <h2>LISTA DE PRESENTES</h2>
+
+    <p class="mensagem">
+      Preparei esta lista com algumas sugestões de presentes.
+      Escolha uma opção que combine com você e faça parte
+      dessa lembrança tão especial!
     </p>
 
-    <section class="cartao">
-      <h3>Uma lembrança especial</h3>
+    <section class="papel">
+      <h3>COM CARINHO, PARA VOCÊ</h3>
       <p>
-        Cada presente será recebido com muito carinho e fará
-        parte das recordações dessa noite tão importante.
-        Obrigada por fazer parte desse momento!
+        Sua presença é o meu maior presente.
+        Se também desejar me presentear, ficarei muito feliz
+        com qualquer lembrança escolhida com carinho.
       </p>
     </section>
 
-    <div class="lista-titulo">ESCOLHA UMA CATEGORIA</div>
+    <div class="titulo-lista">SUGESTÕES DE PRESENTES</div>
 
     <section class="categoria">
-      <button class="categoria-botao" aria-expanded="false">
-        <span>✧ Roupas</span><span class="seta">⌄</span>
+      <button class="abrir" aria-expanded="false">
+        <span>✧ ROUPAS</span><span class="seta">⌄</span>
       </button>
-      <div class="itens">
-        <div class="item">
-          <span class="item-nome">Blusas</span>
-          <button onclick="escolher('Blusas')">Consultar presente</button>
+      <div class="conteudo">
+        <div class="presente">
+          <span>Blusas</span>
+          <a href="#" onclick="consultar(event, 'Blusas')">Consultar</a>
         </div>
-        <div class="item">
-          <span class="item-nome">Vestidos</span>
-          <button onclick="escolher('Vestidos')">Consultar presente</button>
+        <div class="presente">
+          <span>Vestidos</span>
+          <a href="#" onclick="consultar(event, 'Vestidos')">Consultar</a>
         </div>
-        <div class="item">
-          <span class="item-nome">Conjuntos</span>
-          <button onclick="escolher('Conjuntos')">Consultar presente</button>
+        <div class="presente">
+          <span>Conjuntos</span>
+          <a href="#" onclick="consultar(event, 'Conjuntos')">Consultar</a>
         </div>
-        <div class="item">
-          <span class="item-nome">Pijamas</span>
-          <button onclick="escolher('Pijamas')">Consultar presente</button>
+        <div class="presente">
+          <span>Pijamas</span>
+          <a href="#" onclick="consultar(event, 'Pijamas')">Consultar</a>
         </div>
       </div>
     </section>
 
     <section class="categoria">
-      <button class="categoria-botao" aria-expanded="false">
-        <span>✧ Calçados</span><span class="seta">⌄</span>
+      <button class="abrir" aria-expanded="false">
+        <span>✧ CALÇADOS</span><span class="seta">⌄</span>
       </button>
-      <div class="itens">
-        <div class="item">
-          <span class="item-nome">Tênis</span>
-          <button onclick="escolher('Tênis')">Consultar presente</button>
+      <div class="conteudo">
+        <div class="presente">
+          <span>Tênis</span>
+          <a href="#" onclick="consultar(event, 'Tênis')">Consultar</a>
         </div>
-        <div class="item">
-          <span class="item-nome">Sandálias</span>
-          <button onclick="escolher('Sandálias')">Consultar presente</button>
+        <div class="presente">
+          <span>Sandálias</span>
+          <a href="#" onclick="consultar(event, 'Sandálias')">Consultar</a>
         </div>
-        <div class="item">
-          <span class="item-nome">Rasteirinhas</span>
-          <button onclick="escolher('Rasteirinhas')">Consultar presente</button>
+        <div class="presente">
+          <span>Rasteirinhas</span>
+          <a href="#" onclick="consultar(event, 'Rasteirinhas')">Consultar</a>
         </div>
       </div>
     </section>
 
     <section class="categoria">
-      <button class="categoria-botao" aria-expanded="false">
-        <span>✧ Tecnologia</span><span class="seta">⌄</span>
+      <button class="abrir" aria-expanded="false">
+        <span>✧ TECNOLOGIA</span><span class="seta">⌄</span>
       </button>
-      <div class="itens">
-        <div class="item">
-          <span class="item-nome">Fone Bluetooth</span>
-          <button onclick="escolher('Fone Bluetooth')">Consultar presente</button>
+      <div class="conteudo">
+        <div class="presente">
+          <span>Fone Bluetooth</span>
+          <a href="#" onclick="consultar(event, 'Fone Bluetooth')">Consultar</a>
         </div>
-        <div class="item">
-          <span class="item-nome">Caixa de som portátil</span>
-          <button onclick="escolher('Caixa de som portátil')">Consultar presente</button>
+        <div class="presente">
+          <span>Caixa de som portátil</span>
+          <a href="#" onclick="consultar(event, 'Caixa de som portátil')">Consultar</a>
         </div>
-        <div class="item">
-          <span class="item-nome">Acessórios para celular</span>
-          <button onclick="escolher('Acessórios para celular')">Consultar presente</button>
+        <div class="presente">
+          <span>Acessórios para celular</span>
+          <a href="#" onclick="consultar(event, 'Acessórios para celular')">Consultar</a>
         </div>
-        <div class="item">
-          <span class="item-nome">Smartwatch</span>
-          <button onclick="escolher('Smartwatch')">Consultar presente</button>
+        <div class="presente">
+          <span>Smartwatch</span>
+          <a href="#" onclick="consultar(event, 'Smartwatch')">Consultar</a>
         </div>
       </div>
     </section>
 
     <section class="categoria">
-      <button class="categoria-botao" aria-expanded="false">
-        <span>✧ Beleza e acessórios</span><span class="seta">⌄</span>
+      <button class="abrir" aria-expanded="false">
+        <span>✧ BELEZA E ACESSÓRIOS</span><span class="seta">⌄</span>
       </button>
-      <div class="itens">
-        <div class="item">
-          <span class="item-nome">Perfume</span>
-          <button onclick="escolher('Perfume')">Consultar presente</button>
+      <div class="conteudo">
+        <div class="presente">
+          <span>Perfume</span>
+          <a href="#" onclick="consultar(event, 'Perfume')">Consultar</a>
         </div>
-        <div class="item">
-          <span class="item-nome">Maquiagem</span>
-          <button onclick="escolher('Maquiagem')">Consultar presente</button>
+        <div class="presente">
+          <span>Maquiagem</span>
+          <a href="#" onclick="consultar(event, 'Maquiagem')">Consultar</a>
         </div>
-        <div class="item">
-          <span class="item-nome">Bolsa</span>
-          <button onclick="escolher('Bolsa')">Consultar presente</button>
+        <div class="presente">
+          <span>Bolsa</span>
+          <a href="#" onclick="consultar(event, 'Bolsa')">Consultar</a>
         </div>
-        <div class="item">
-          <span class="item-nome">Acessórios</span>
-          <button onclick="escolher('Acessórios')">Consultar presente</button>
+        <div class="presente">
+          <span>Acessórios</span>
+          <a href="#" onclick="consultar(event, 'Acessórios')">Consultar</a>
         </div>
       </div>
     </section>
 
     <section class="categoria">
-      <button class="categoria-botao" aria-expanded="false">
-        <span>✧ Presentes especiais</span><span class="seta">⌄</span>
+      <button class="abrir" aria-expanded="false">
+        <span>✧ PRESENTES ESPECIAIS</span><span class="seta">⌄</span>
       </button>
-      <div class="itens">
-        <div class="item">
-          <span class="item-nome">Livros</span>
-          <button onclick="escolher('Livros')">Consultar presente</button>
+      <div class="conteudo">
+        <div class="presente">
+          <span>Livros</span>
+          <a href="#" onclick="consultar(event, 'Livros')">Consultar</a>
         </div>
-        <div class="item">
-          <span class="item-nome">Itens de decoração</span>
-          <button onclick="escolher('Itens de decoração')">Consultar presente</button>
+        <div class="presente">
+          <span>Itens de decoração</span>
+          <a href="#" onclick="consultar(event, 'Itens de decoração')">Consultar</a>
         </div>
-        <div class="item">
-          <span class="item-nome">Vale-presente</span>
-          <button onclick="escolher('Vale-presente')">Consultar presente</button>
+        <div class="presente">
+          <span>Vale-presente</span>
+          <a href="#" onclick="consultar(event, 'Vale-presente')">Consultar</a>
         </div>
-        <div class="item">
-          <span class="item-nome">Uma surpresa especial</span>
-          <button onclick="escolher('Uma surpresa especial')">Consultar presente</button>
+        <div class="presente">
+          <span>Uma surpresa especial</span>
+          <a href="#" onclick="consultar(event, 'Uma surpresa especial')">Consultar</a>
         </div>
       </div>
     </section>
 
-    <p class="observacao">
-      Para combinar um presente ou consultar tamanhos e detalhes,
-      é só entrar em contato pelo WhatsApp.
+    <p class="aviso">
+      Para consultar tamanhos, detalhes ou combinar um presente,
+      entre em contato pelo WhatsApp.
     </p>
 
-    <a class="whatsapp"
-       href="https://wa.me/5521983667385?text=Ol%C3%A1%21%20Gostaria%20de%20conversar%20sobre%20um%20presente%20para%20os%20XV%20da%20Mari."
+    <a class="contato"
+       href="https://wa.me/5521983667385?text=Ol%C3%A1%21%20Gostaria%20de%20conversar%20sobre%20um%20presente%20para%20a%20Mari."
        target="_blank" rel="noopener">
-      FALAR COM A DEBUTANTE
+      CONVERSAR PELO WHATSAPP
     </a>
 
     <div class="ornamento">✦ ✧ ✦</div>
@@ -423,7 +406,7 @@
   </main>
 
   <script>
-    document.querySelectorAll(".categoria-botao").forEach((botao) => {
+    document.querySelectorAll(".abrir").forEach((botao) => {
       botao.addEventListener("click", () => {
         const categoria = botao.closest(".categoria");
         const aberta = categoria.classList.toggle("aberta");
@@ -431,17 +414,19 @@
       });
     });
 
-    function escolher(presente) {
+    function consultar(event, presente) {
+      event.preventDefault();
+
       const mensagem =
         "Olá! Gostaria de conversar sobre presentear a Mari com: " +
         presente +
         ". Podemos combinar os detalhes?";
 
-      const link =
+      const url =
         "https://wa.me/5521983667385?text=" +
         encodeURIComponent(mensagem);
 
-      window.open(link, "_blank", "noopener");
+      window.open(url, "_blank", "noopener");
     }
   </script>
 </body>
